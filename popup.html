@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body { width: 320px; padding: 16px; font-family: system-ui, sans-serif; }
+    label { display: block; margin-top: 12px; font-weight: bold; }
+    input, textarea, select { width: 100%; padding: 6px; margin-top: 4px; box-sizing: border-box; }
+    button { width: 100%; margin-top: 12px; padding: 8px; border: none; cursor: pointer; font-weight: bold; }
+    .primary { background: #4CAF50; color: white; }
+    .danger { background: #f44336; color: white; }
+    .note { font-size: 12px; color: #666; margin-top: 4px; }
+    .status { margin-top: 12px; font-weight: bold; text-align: center; }
+    .locked { background: #f0f0f0; pointer-events: none; opacity: 0.7; }
+    .unlock-info { font-size: 12px; color: #d32f2f; margin-top: 8px; }
+    .time-options { display: flex; gap: 10px; }
+    .time-options div { flex: 1; }
+  </style>
+</head>
+<body>
+  <h3>⏳ 专注屏蔽器 Pro</h3>
+
+  <div id="settingsArea">
+    <label for="sites">📵 要屏蔽的网站（每行一个，无需 http）：</label>
+    <textarea id="sites" rows="4" placeholder="bilibili.com&#10;youtube.com"></textarea>
+
+    <div class="time-options">
+      <div>
+        <label for="startTime">开始时间</label>
+        <input type="time" id="startTime" value="08:00">
+      </div>
+      <div>
+        <label for="endTime">结束时间</label>
+        <input type="time" id="endTime" value="18:00">
+      </div>
+    </div>
+
+    <label for="mode">🛡️ 屏蔽模式：</label>
+    <select id="mode">
+      <option value="block">完全封禁（直接禁止访问）</option>
+      <option value="delay">部分封禁（等待30秒后可进入）</option>
+    </select>
+
+    <div id="lockArea">
+      <button id="saveBtn" class="primary">💾 保存（不锁定）</button>
+      <button id="lockBtn" class="danger">🔒 保存并锁定设置（到结束时间前不可修改）</button>
+      <div id="lockStatus" class="unlock-info"></div>
+    </div>
+  </div>
+
+  <div class="status" id="status"></div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

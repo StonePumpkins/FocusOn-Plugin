@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "专注屏蔽器 Pro",
+  "version": "2.0",
+  "description": "可锁定设置、支持完全封禁与延迟30秒进入的专注工具",
+  "permissions": [
+    "declarativeNetRequest",
+    "declarativeNetRequestWithHostAccess",
+    "storage",
+    "alarms",
+    "webNavigation",
+    "tabs"
+  ],
+  "host_permissions": [
+    "*://*/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "专注屏蔽器 Pro"
+  }
+}

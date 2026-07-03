@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body {
+      background: #1a1a2e;
+      color: white;
+      font-family: system-ui, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .timer {
+      font-size: 72px;
+      font-weight: bold;
+      margin: 20px;
+      color: #e94560;
+    }
+    .message {
+      font-size: 18px;
+      max-width: 400px;
+      text-align: center;
+      margin-bottom: 30px;
+      color: #ccc;
+    }
+    button {
+      padding: 12px 30px;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      margin: 10px;
+      font-weight: bold;
+    }
+    .enter-btn {
+      background: #4CAF50;
+      color: white;
+      display: none;
+    }
+    .cancel-btn {
+      background: #555;
+      color: white;
+    }
+    .url-display {
+      font-size: 14px;
+      color: #aaa;
+      margin-top: 20px;
+      word-break: break-all;
+    }
+  </style>
+</head>
+<body>
+  <div class="message">⏳ 你正在尝试访问一个被限制的网站<br>请等待 30 秒，三思而后行</div>
+  <div class="timer" id="timer">30</div>
+  <button class="enter-btn" id="enterBtn">→ 我确定要进入</button>
+  <button class="cancel-btn" id="cancelBtn">✕ 放弃，回去学习</button>
+  <div class="url-display" id="urlDisplay"></div>
+
+  <script src="waiting.js"></script>
+</body>
+</html>
